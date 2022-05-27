@@ -1,4 +1,4 @@
 class User < ApplicationRecord
-    has_many :messages
-    has_many :friendships
+    has_many :messages, dependent: :destroy
+    has_many :chatrooms, through: :messages
 end
