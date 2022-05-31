@@ -1,11 +1,12 @@
 import Navbar from "../components/Navbar";
 import '../css/Home.css';
+import Chatlist from "../components/Chatlist";
 
 function Home(){
     return(
         <div id="Home">
             <Navbar/>
-            <div>CHATROOM LIST</div>
+            <Chatlist/>
             <div>CHATROOM MSGS DISPLAY</div>
         </div>
     );
