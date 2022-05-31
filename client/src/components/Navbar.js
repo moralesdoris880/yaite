@@ -1,18 +1,23 @@
 import { useState } from 'react';
+import '../css/Navbar.css';
 
 function Navbar(){
     const[burgerNav,setBurgerNav]= useState(true)
     return(
-        <div>
-            <span className="material-symbols-outlined" onClick={()=>setBurgerNav(!burgerNav)}>{burgerNav?'menu':'close'}</span>
-            {burgerNav?<ul>
-                <span className="material-symbols-outlined">home</span>
-                <span className="material-symbols-outlined">info</span>
-                <span className="material-symbols-outlined">settings</span>
-                <span className="material-symbols-outlined">exit_to_app</span>
-            </ul>:console.log('random dancing...')}
+        <div id="Navbar">
+            <span className="material-symbols-outlined" onClick={()=>setBurgerNav(!burgerNav)} style={{ fontSize:'32px'}}>{burgerNav?'menu':'close'}</span>
+            {burgerNav? console.log('random dancing...'):
+            <ul id="Nav">
+                <span className="material-symbols-outlined" style={{ fontSize:'24px'}}>info</span>
+                <span className="material-symbols-outlined" style={{ fontSize:'24px'}}>settings</span>
+                <span className="material-symbols-outlined" style={{ fontSize:'24px'}}>exit_to_app</span>
+            </ul>}
         </div>
     );
 }
 
 export default Navbar;
+
+
+
+// 
