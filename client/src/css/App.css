@@ -1,4 +1,7 @@
 .App{
     background-image: linear-gradient(to right top, #de2d94, #e33da2, #e74baf, #eb58bd, #ef64ca, #ea5fd0, #e35bd6, #dc57dc, #c642de, #ab2fe1, #891fe5, #5815ea);
     height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
