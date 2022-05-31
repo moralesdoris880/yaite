@@ -12,3 +12,6 @@ function Signup(){
 }
 
 export default Signup;
+
+
+// onChange={(e) => setPassword(e.target.value)}
