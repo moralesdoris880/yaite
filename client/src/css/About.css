@@ -1,5 +1,7 @@
 #About{
     width: 100%;
+    background-color: #ffe7f6;
+    border-radius: 0px 20px 20px 0px;
 }
 .Header{
     background-color: #ef64ca;
