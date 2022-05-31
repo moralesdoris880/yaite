@@ -1,4 +1,23 @@
 #Chatlist{
-    background-color: aqua;
+    /* background-color: aqua; */
     width: 17vw;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+#Search{
+    position: relative;
+    padding: 10px;
+    padding-bottom: 30px;
+}
+::placeholder{
+    position: relative;
+    left: 20px;
+}
+#Searchbox{
+    width: 15vw;
+    height: 3vh;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 3px 3px 2px lightblue;
 }
