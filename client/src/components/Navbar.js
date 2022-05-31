@@ -6,10 +6,10 @@ function Navbar(){
         <div>
             <span className="material-symbols-outlined" onClick={()=>setBurgerNav(!burgerNav)}>{burgerNav?'menu':'close'}</span>
             {burgerNav?<ul>
-                <span class="material-symbols-outlined">home</span>
-                <span class="material-symbols-outlined">info</span>
-                <span class="material-symbols-outlined">settings</span>
-                <span class="material-symbols-outlined">exit_to_app</span>
+                <span className="material-symbols-outlined">home</span>
+                <span className="material-symbols-outlined">info</span>
+                <span className="material-symbols-outlined">settings</span>
+                <span className="material-symbols-outlined">exit_to_app</span>
             </ul>:console.log('random dancing...')}
         </div>
     );
