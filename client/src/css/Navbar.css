@@ -1,11 +1,11 @@
 #Navbar{
-    width: 5vw;
+    width: 4vw;
+    height: 90vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: aliceblue;
     border-radius: 20px 0px 0px 20px;
-
 }
 #Nav{
     display: flex;

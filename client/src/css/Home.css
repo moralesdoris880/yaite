@@ -1,9 +1,6 @@
 #Home{
-    width: 70vw;
-    height: 90vh;
-    background-color: white;
-    border-radius: 2em;
+    background-color: navajowhite;
+    border-radius: 0px 20px 20px 0px;
     display: flex;
     flex-direction: row;
-    padding: 15px;
 }

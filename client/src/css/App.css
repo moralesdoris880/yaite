@@ -5,3 +5,12 @@
     align-items: center;
     justify-content: center;
 }
+.Content{
+    width: 70vw;
+    height: 90vh;
+    background-color: white;
+    border-radius: 2em;
+    display: flex;
+    flex-direction: row;
+    padding: 15px;
+}

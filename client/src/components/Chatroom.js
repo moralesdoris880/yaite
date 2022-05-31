@@ -1,4 +1,4 @@
-function Chatroom(){
+function Chatroom({chatroom}){
     return(
         <div className="chatroom">
             {/* IMG HERE

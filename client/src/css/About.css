@@ -1,0 +1,17 @@
+#About{
+    width: 100%;
+}
+.Header{
+    background-color: #ef64ca;
+    border-radius: 0px 20px 0px 0px;
+    height: 5vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 36px;
+    font-family: 'Lobster', cursive;
+}
+
+/* #C8D6FF */
