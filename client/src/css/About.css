@@ -1,6 +1,8 @@
 #About{
     width: 100%;
-    background-color: #ffe7f6;
+    background-image: url("../media/People.jpg");
+    background-repeat: no-repeat;
+    background-size: 1100px 900px;
     border-radius: 0px 20px 20px 0px;
 }
 .Header{
@@ -15,22 +17,15 @@
     font-size: 36px;
     font-family: 'Lobster', cursive;
 }
-.Heading{
-    font-family: 'Roboto', sans-serif;
-    font-size: 24px;
-    padding: 15px;
-    color: #ef64ca;
-}
 .text{
     font-family: 'Lora', serif;
     padding-left: 15px;
+    padding-right: 15px;
     color: #AA336A;
     font-size: 18px;
 }
 #aboutinfo{
-    display: flex;
-    flex-direction: column;
-    height: 100%;
+    width: 120%;
 }
 .box{
     padding: 10px 0px 20px 0px;
@@ -47,12 +42,19 @@
     padding-left: 15px;
 
 }
-#people{
-    height: 42%;
-    width: 80%;
-    padding: 0px 10px 0px 10px;
+#info{
+    background-color: #ef64ca;
+    height: 90%;
+    padding: 10px;
+    width: 90%;
+    margin-top: 50px;
+    border-radius: 10px;
 }
-#aboutmain{
+.Heading2{
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    padding: 15px;
+    color: white;
 }
 
 /* #C8D6FF */
