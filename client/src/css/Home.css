@@ -2,6 +2,6 @@
     background-color: navajowhite;
     border-radius: 0px 20px 20px 0px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     width: 100%;
 }
