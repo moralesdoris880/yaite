@@ -3,4 +3,5 @@
     border-radius: 0px 20px 20px 0px;
     display: flex;
     flex-direction: row;
+    width: 100%;
 }

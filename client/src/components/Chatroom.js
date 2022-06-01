@@ -1,8 +1,10 @@
-function Chatroom({chatroom}){
+function Chatroom({chatroom,setChat}){
     return(
         <div className="chatroom">
-            {/* IMG HERE
-            TITLE OF CHATROOM */}
+            <button onClick={(chatroom)=>setChat(chatroom)}>
+                {/* TITLE HERE 
+                RANDOM IMAGE HERE */}
+            </button>
         </div>
     );
 }
