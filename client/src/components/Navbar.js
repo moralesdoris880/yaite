@@ -5,6 +5,16 @@ import '../css/Navbar.css';
 function Navbar(){
     const[burgerNav,setBurgerNav]= useState(true)
     const navigate = useNavigate();
+
+    // function handleLogout(){
+    //     fetch("/logout", { method: "DELETE" }).then((r) => { 
+    //         if (r.ok) {
+    //           setUser(null); PASS THRU REDUX
+    //         }
+    //       });
+        
+    // }
+
     return(
         <div id="Navbar">
             <span className="material-symbols-outlined" onClick={()=>setBurgerNav(!burgerNav)} style={{ fontSize:'32px'}}>{burgerNav?'menu':'close'}</span>

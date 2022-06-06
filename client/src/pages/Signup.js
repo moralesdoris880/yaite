@@ -1,15 +1,41 @@
 import '../css/Signup.css'
+import { useState } from 'react';
 
 function Signup(){
+    const[password,setPassword]=useState("");
+    const[passwordConfirmation,setPasswordConfirmation]=useState("");
+    const[username,setUsername]=useState("");
+
+    // function handleSignup(e){  PASS THRU REDUX
+    //     e.preventDefault();
+    //     fetch("/signup", {
+    //         method: "POST",
+    //         headers: {
+    //           "Content-Type": "application/json",
+    //         },
+    //         body: JSON.stringify({
+    //           username,
+    //           password,
+    //           password_confirmation: passwordConfirmation
+    //         }),
+    //       }).then((r) => {
+    //         if (r.ok) {
+    //           r.json().then((user) => handleSignUpSuccess(user));
+    //         } else {
+    //           r.json().then(() => console.log("Not created :<"));
+    //         }
+    //       });
+    // }
+
     return(
         <div id="Signup">
             <div className="Header"><h1>Yaite</h1></div>
             <form id="signupform">
                 <h1 className='heading'>Sign Up</h1>
                 <p className='text' style={{textAlign:'center'}}>Already have an account? <a href='/login'>Login</a></p>
-                <input type="text" placeholder="Username" className='inputs' ></input>
-                <input type="text" placeholder="Password" className='inputs' ></input>
-                <input type="text" placeholder="Re-Enter Password" className='inputs' ></input>
+                <input type="text" placeholder="Username" className='inputs' onChange={(e) => setUsername(e.target.value)}></input>
+                <input type="text" placeholder="Password" className='inputs' onChange={(e) => setPassword(e.target.value)}></input>
+                <input type="text" placeholder="Re-Enter Password" className='inputs' onChange={(e) => setPasswordConfirmation(e.target.value)}></input>
                 <input type="submit" value="Sign Up" className='submit'></input>
             </form>
         </div>
@@ -19,4 +45,4 @@ function Signup(){
 export default Signup;
 
 
-// onChange={(e) => setPassword(e.target.value)}
+// 
