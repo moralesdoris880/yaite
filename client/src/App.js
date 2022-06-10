@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { useEffect } from "react";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
@@ -10,7 +11,7 @@ import { account } from './features/reducers/userSlice';
 
 function App() {
   const user = useSelector((state) => state.user.value)
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
 
   useEffect(() => { // auto-login
@@ -21,7 +22,7 @@ function App() {
         });
       }
     });
-  }, []);
+  }, [dispatch]);
 
   return (
     <BrowserRouter>
