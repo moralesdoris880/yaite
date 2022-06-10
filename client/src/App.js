@@ -5,19 +5,23 @@ import Signup from "./pages/Signup";
 import About from "./pages/About";
 import Navbar from "./components/Navbar";
 import './css/App.css';
+import { useSelector, useDispatch } from 'react-redux'
+import { account } from './features/reducers/userSlice';
 
 function App() {
+  const user = useSelector((state) => state.user.value)
+  const dispatch = useDispatch()
 
-  // useEffect(() => {
-  //   // auto-login
-  //   fetch("/me").then((r) => {
-  //     if (r.ok) {
-  //       r.json().then((user) => {
-  //         setUser(user) REDUX PASSING THRU 
-  //       });
-  //     }
-  //   });
-  // }, []);
+
+  useEffect(() => { // auto-login
+    fetch("/me").then((r) => {
+      if (r.ok) {
+        r.json().then((user) => {
+          dispatch(account(user))
+        });
+      }
+    });
+  }, []);
 
   return (
     <BrowserRouter>
