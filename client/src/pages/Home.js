@@ -3,7 +3,6 @@ import '../css/Home.css';
 import Chatlist from "../components/Chatlist";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from 'react-redux'
-import { auth } from '../features/reducers/authSlice';
 import Login from './Login';
 
 

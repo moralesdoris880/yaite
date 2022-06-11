@@ -7,8 +7,6 @@ function Signup(){
     const[passwordConfirmation,setPasswordConfirmation]=useState("");
     const[username,setUsername]=useState("");
 
-    
-
     function handleSignup(e){ 
         e.preventDefault();
         fetch("/signup", {
