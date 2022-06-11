@@ -1,5 +1,6 @@
 import '../css/Signup.css'
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 
 function Signup(){
@@ -7,6 +8,7 @@ function Signup(){
     const[passwordConfirmation,setPasswordConfirmation]=useState("");
     const[username,setUsername]=useState("");
     const[displayPassword,setDisplayPassword]=useState(true);
+    const navigate = useNavigate();
 
     function handleSignup(e){ 
         e.preventDefault();
@@ -22,7 +24,7 @@ function Signup(){
             }),
           }).then((r) => {
             if (r.ok) {
-              r.json().then((user) => console.log("Yess"));
+              r.json().then((user) => navigate("/"));
             } else {
               r.json().then(() => console.log("Not created :<"));
             }

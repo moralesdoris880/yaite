@@ -22,7 +22,7 @@ function Navbar(){
             <ul id="Nav">
                 <button onClick={()=>navigate("/")} className="navtab"><span className="material-symbols-outlined" style={{ fontSize:'24px'}}>home</span></button>
                 <button onClick={()=>navigate("/about")} className="navtab"><span className="material-symbols-outlined" style={{ fontSize:'24px'}}>info</span></button>
-                <span className="material-symbols-outlined" style={{ fontSize:'24px'}}>settings</span>
+                <button onClick={()=>navigate("/settings")} className="navtab"><span className="material-symbols-outlined" style={{ fontSize:'24px'}}>settings</span></button>
                 <span className="material-symbols-outlined" style={{ fontSize:'24px'}}>exit_to_app</span>
             </ul>}
         </div>
