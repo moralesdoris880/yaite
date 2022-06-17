@@ -27,7 +27,7 @@ class ChatroomsController < ApplicationController
 
     def destroy
         current_user = User.find_by(id:session[:user_id])
-        if current_user.username == 'bloodinia'
+        if current_user.id == 1
             chatroom = Chatroom.find_by(id: params[:id])
             if chatroom
                 chatroom.destroy
