@@ -1,5 +1,6 @@
 class ChatroomsController < ApplicationController
     wrap_parameters format: []
+    rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity
 
     def index
         chatrooms = Chatroom.all
@@ -49,6 +50,5 @@ class ChatroomsController < ApplicationController
     def render_unprocessable_entity(invalid)
         render json: { errors: ["Incorrect"]}, status: :unprocessable_entity
     end
-
 
 end

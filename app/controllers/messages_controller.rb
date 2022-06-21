@@ -1,4 +1,7 @@
 class MessagesController < ApplicationController
+    wrap_parameters format: []
+    rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity
+
     def chatroom_messages
         chatroom = Chatroom.find_by(id:params[:id])
         if chatroom
@@ -49,4 +52,15 @@ class MessagesController < ApplicationController
             render json: {errors: ['Not Authorized']}, status: :unauthorized
         end
     end
+
+    private
+
+    def message_params
+        params.permit(:chatroom_id,:user_id,:body)
+    end
+
+    def render_unprocessable_entity(invalid)
+        render json: { errors: ["Incorrect"]}, status: :unprocessable_entity
+    end
+
 end
