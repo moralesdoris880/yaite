@@ -1,12 +1,16 @@
 import '../css/Login.css'
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { login } from '../features/reducers/authSlice';
 
 function Login(){
     const[username,setUsername]=useState("");
     const[password,setPassword]=useState("");
     const[displayPassword,setDisplayPassword]=useState(true);
     const navigate = useNavigate();
+    const dispatch = useDispatch();
+    
 
     function handleLogin(e){
         e.preventDefault();
@@ -21,11 +25,16 @@ function Login(){
             }),
           }).then((r) => {
             if (r.ok) {
-              r.json().then((user) =>  navigate("/"));
+              r.json().then((user) => handleLoginSuccess());
             } else {
               r.json().then(() => console.log("Try again bub :<"));
             }
           });
+    }
+
+    function handleLoginSuccess(){
+      dispatch(login());
+      navigate("/");
     }
 
     function handleDisplayPassword(e){
