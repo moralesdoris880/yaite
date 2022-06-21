@@ -15,15 +15,15 @@ function App() {
   const dispatch = useDispatch();
 
 
-  useEffect(() => { // auto-login
-    fetch("/me").then((r) => {
-      if (r.ok) {
-        r.json().then((user) => {
-          dispatch(account(user))
-        });
-      }
-    });
-  }, [dispatch]);
+  // useEffect(() => { // auto-login                      STILL NEEDS FIXING!!! DOES NOT WORK YET >:( 
+  //   fetch("/me").then((r) => {
+  //     if (r.ok) {
+  //       r.json().then((user) => {
+  //         dispatch(account(user))
+  //       });
+  //     }
+  //   });
+  // }, [dispatch]);
 
   return (
     <BrowserRouter>

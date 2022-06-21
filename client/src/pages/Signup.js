@@ -1,6 +1,8 @@
 import '../css/Signup.css'
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { login } from '../features/reducers/authSlice';
 
 
 function Signup(){
@@ -9,6 +11,7 @@ function Signup(){
     const[username,setUsername]=useState("");
     const[displayPassword,setDisplayPassword]=useState(true);
     const navigate = useNavigate();
+    const dispatch = useDispatch();
 
     function handleSignup(e){ 
         e.preventDefault();
@@ -24,11 +27,16 @@ function Signup(){
             }),
           }).then((r) => {
             if (r.ok) {
-              r.json().then((user) => navigate("/"));
+              r.json().then((user) => handleSignupSuccess());
             } else {
               r.json().then(() => console.log("Not created :<"));
             }
           });
+    }
+
+    function handleSignupSuccess(){
+      dispatch(login());
+      navigate("/");
     }
 
     function handleDisplayPassword(e){

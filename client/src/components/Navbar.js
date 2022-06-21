@@ -12,7 +12,6 @@ function Navbar(){
     //           setUser(null); PASS THRU REDUX
     //         }
     //       });
-        
     // }
 
     return(
