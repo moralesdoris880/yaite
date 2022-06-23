@@ -9,21 +9,26 @@ import Settings from "./pages/Settings";
 import './css/App.css';
 import { useSelector, useDispatch } from 'react-redux'
 import { account } from './features/reducers/userSlice';
+import { login } from './features/reducers/authSlice';
 
 function App() {
-  const user = useSelector((state) => state.user.value)
   const dispatch = useDispatch();
 
 
-  // useEffect(() => { // auto-login                      STILL NEEDS FIXING!!! DOES NOT WORK YET >:( 
-  //   fetch("/me").then((r) => {
-  //     if (r.ok) {
-  //       r.json().then((user) => {
-  //         dispatch(account(user))
-  //       });
-  //     }
-  //   });
-  // }, [dispatch]);
+  useEffect(() => { // auto-login                      STILL NEEDS FIXING!!! DOES NOT WORK YET >:( 
+    fetch("/me").then((r) => {
+      if (r.ok) {
+        r.json().then((user) => {
+          handleAutoLogin(user)
+        });
+      }
+    });
+  }, []);
+
+  function handleAutoLogin(user){
+    dispatch(account(user));
+    dispatch(login());
+  }
 
   return (
     <BrowserRouter>
