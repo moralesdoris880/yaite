@@ -15,7 +15,7 @@ function App() {
   const dispatch = useDispatch();
 
 
-  useEffect(() => { // auto-login                      STILL NEEDS FIXING!!! DOES NOT WORK YET >:( 
+  useEffect(() => { // auto-login  
     fetch("/me").then((r) => {
       if (r.ok) {
         r.json().then((user) => {

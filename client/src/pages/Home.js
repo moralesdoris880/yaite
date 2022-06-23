@@ -20,7 +20,7 @@ function Home(){
                 <div className="Header"><h1>Yaite</h1></div>
                 <div>
                 <Chatlist setChat={setChat}/>
-                {/* ON CLICK DISPLAY THE CHATROOM HERE */}
+                {/* ADD LOGIC FOR WHEN INSIDE CHATLIST A CHATROOM IS SELECTED */}
                 </div>
             </div>
         );
