@@ -7,9 +7,10 @@ import About from "./pages/About";
 import Navbar from "./components/Navbar";
 import Settings from "./pages/Settings";
 import './css/App.css';
-import { useSelector, useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { account } from './features/reducers/userSlice';
 import { login } from './features/reducers/authSlice';
+import ChatroomStore from "./pages/ChatroomStore";
 
 function App() {
   const dispatch = useDispatch();
@@ -36,6 +37,7 @@ function App() {
       <div className="Content">
       <Navbar/>
         <Routes>
+          <Route path="/store" element={<ChatroomStore />}/>
           <Route path="/settings" element={<Settings />}/>
           <Route path="/about" element={<About />}/>
           <Route path="/signup" element={<Signup />}/>

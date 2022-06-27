@@ -19,7 +19,7 @@ class ChatroomsController < ApplicationController
     def create
         current_user = User.find_by(id:session[:user_id])
         if current_user
-            chatroom = Chatroom.create!(chatroom_params)
+            chatroom = Chatroom.create(chatroom_params)
             render json: chatroom
         else
             render json: {errors: ['Not Authorized']}, status: :unauthorized
