@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy'
   get '/me', to: 'users#show'
   get '/chatroom_messages', to: 'messages#chatroom_messages'
+  get '/user_chatrooms', to: 'users#user_chatrooms'
 
   get '*path',
   to: 'fallback#index',

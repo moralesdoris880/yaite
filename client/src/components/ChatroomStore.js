@@ -1,10 +1,34 @@
+import { useState } from 'react';
+
 function ChatroomInStore({chatroom}){
+    const[display,setDisplay]= useState(false);
+    const[message,setMessage]= useState("A user has joined the chatroom");
+
+    function handleJoin(e){
+        e.preventDefault();
+        fetch("/messages", { 
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              "chatroom_id":chatroom.id,
+              "body":message,
+            }),
+          }).then((r) => {
+            if (r.ok) {
+              r.json().then(() => setDisplay(true));
+            } else {
+              r.json().then(() => console.log("Message could not be sent"));
+            }
+          });
+    }
+
     return(
         <div>
             <p>{chatroom.name}</p>
             <p>Currently 1 User</p>
-            <button>Join</button>
-            <button disabled>Joined</button>
+            {display?<button disabled>Joined</button> : <button onClick={(e)=>handleJoin(e)}>Join</button>} 
         </div>
     );
 }
