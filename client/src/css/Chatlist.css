@@ -21,3 +21,24 @@
     border-radius: 10px;
     box-shadow: 3px 3px 2px lightblue;
 }
+#ChatlistTop{
+    display: flex;
+    flex-direction: row;
+}
+#storebtn{
+    border: none;
+    border-radius: 10px;
+    width: 40px;
+    height: 26px;
+    position: relative;
+    top: 10px;
+    background-color: white;
+}
+#storespan{
+    position: relative;
+    padding: 0px 0px 0px 0px;
+    color: lightblue;
+    background-color: white;
+    font-size: 36px;
+    top:-5px;
+}

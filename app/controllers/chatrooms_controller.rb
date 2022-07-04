@@ -10,7 +10,7 @@ class ChatroomsController < ApplicationController
     def show 
         chatroom = Chatroom.find_by(id: params[:id])
         if chatroom
-            render json: chatroom
+            render json: chatroom.messages,include: [:user]
         else 
             render json: {errors: ['Chatroom not found']}, status: :not_found
         end

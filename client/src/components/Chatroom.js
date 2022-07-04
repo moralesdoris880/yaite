@@ -1,10 +1,14 @@
-function Chatroom({chatroom,setChat}){
+function Chatroom({chatroom,setChat,setChatroomName}){
+
+    function handleOpenChat(e,chatroom){
+        e.preventDefault();
+        setChat(chatroom.id)
+        setChatroomName(chatroom.name)
+    }
+    
     return(
         <div className="chatroom">
-            <button onClick={(chatroom)=>setChat(chatroom)}>
-                {/* TITLE HERE 
-                RANDOM IMAGE HERE */}
-            </button>
+            <button onClick={(e)=>handleOpenChat(e,chatroom)}>{chatroom.name}</button>
         </div>
     );
 }
