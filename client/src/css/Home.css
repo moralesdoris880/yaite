@@ -1,7 +1,9 @@
 #Home{
-    background-color: navajowhite;
     border-radius: 0px 20px 20px 0px;
     display: flex;
     flex-direction: column;
     width: 100%;
+}
+#leftsection{
+    background-color: lightblue;
 }

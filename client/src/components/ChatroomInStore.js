@@ -5,7 +5,7 @@ function ChatroomInStore({chatroom}){
     const[message,setMessage]= useState("A user has joined the chatroom");
 
     function handleJoin(e){
-        e.preventDefault();
+      e.preventDefault();
         fetch("/messages", { 
             method: "POST",
             headers: {

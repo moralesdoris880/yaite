@@ -1,10 +1,11 @@
 import { useState,useEffect } from 'react';
-import ChatroomInStore from '../components/ChatroomStore';
+import ChatroomInStore from '../components/ChatroomInStore';
 
 function ChatroomStore(){
-    const[query,setQuery]=useState("");
-    const[name,setName]=useState("");
-    const[chatrooms,setChatrooms]=useState([]);
+    const[ query,setQuery ] = useState("");
+    const[ name,setName ] = useState("");
+    const[ newChatroomSucess,setNewChatroomSucess ] = useState(false);
+    const[ chatrooms,setChatrooms ] = useState([]);
 
 
     useEffect(() => {
@@ -13,7 +14,7 @@ function ChatroomStore(){
             r.json().then((chatrooms) => setChatrooms(chatrooms));
           }
         });
-      }, []);
+      }, [newChatroomSucess]);
 
 
     function handleNewChatroom(e,name){
@@ -37,6 +38,7 @@ function ChatroomStore(){
 
     function handleNewChatroomSuccess(chatroom){
         console.log('chatroom was made!')
+        setNewChatroomSucess(true)
     }
 
     return(

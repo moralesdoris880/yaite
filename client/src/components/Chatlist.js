@@ -9,6 +9,7 @@ function Chatlist(){
     const [ chat, setChat ] = useState(0);
     const [ chatroomName, setChatroomName ] = useState("");
     const [ messages, setMessages ] = useState([]);
+    const [ newMessage, setNewMessage ] = useState("");
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -27,10 +28,30 @@ function Chatlist(){
         });
       }, [chat]);
 
+    function handleNewMessage(e,newMessage){
+      e.preventDefault();
+      fetch("/messages", { 
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          "chatroom_id":chat,
+          "body":newMessage,
+        }),
+      }).then((r) => {
+        if (r.ok) {
+          r.json().then(() => setNewMessage(""));
+        } else {
+          r.json().then(() => console.log("Message could not be sent"));
+        }
+      });
+    }
+
     
     return(
         <div id="Chatlist">
-            <div>
+            <div id="leftsectiond">
               <div id="ChatlistTop">
                 <form id="Search">
                     <input type="text" placeholder='Search' id="Searchbox"/>
@@ -40,9 +61,14 @@ function Chatlist(){
               </div>
               {chatrooms.length?chatrooms.map((chatroom)=><Chatroom chatroom={chatroom} setChatroomName={setChatroomName} setChat={setChat} key={chatroom.id}/>):<p style={{color:'#757575'}}>Currently no chatrooms.</p>}
             </div>
-            <div>
-                <p>{chatroomName}</p>  
-                {messages.map((message)=><Message message={message} key={message.id}/>)}
+            <div id="chatroomMsg">
+              <h1 id="chatroomName">{chatroomName}</h1>  
+              <div id="chatmsgbox">{messages.map((message)=><Message message={message} key={message.id}/>)}
+              </div>
+              <form className="newMessage" onSubmit={(e)=>handleNewMessage(e,newMessage)}>
+                <input type="text" placeholder='Start a new message' className='textinput' onChange={(e)=>setNewMessage(e.target.value)} required/>
+                <input type="submit" value="send"className='submitinput'/>
+              </form>
             </div>
         </div>
     );

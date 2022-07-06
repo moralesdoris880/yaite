@@ -1,3 +1,5 @@
+import '../css/Chatroom.css';
+
 function Chatroom({chatroom,setChat,setChatroomName}){
 
     function handleOpenChat(e,chatroom){
@@ -8,7 +10,7 @@ function Chatroom({chatroom,setChat,setChatroomName}){
     
     return(
         <div className="chatroom">
-            <button onClick={(e)=>handleOpenChat(e,chatroom)}>{chatroom.name}</button>
+            <button onClick={(e)=>handleOpenChat(e,chatroom)} className="chatroombtn">{chatroom.name}</button>
         </div>
     );
 }

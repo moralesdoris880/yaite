@@ -1,0 +1,12 @@
+.messageBubble{
+    background-color: white;
+    width: 300px;
+    border-radius: 10px;
+    padding: 10px;
+    position: relative;
+    left:50%;
+}
+.user{
+    color: lightgray;
+    padding-bottom: 5px;
+}

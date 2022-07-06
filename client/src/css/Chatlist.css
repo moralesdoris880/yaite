@@ -1,6 +1,6 @@
 #Chatlist{
     /* background-color: aqua; */
-    width: 17vw;
+    width: 100%;
     display: flex;
     align-items: center;
     flex-direction: row;
@@ -24,6 +24,7 @@
 #ChatlistTop{
     display: flex;
     flex-direction: row;
+    
 }
 #storebtn{
     border: none;
@@ -41,4 +42,50 @@
     background-color: white;
     font-size: 36px;
     top:-5px;
+}
+#chatroomMsg{
+    background-color: #FFF0F5;
+    width: 70%;
+    height: 700px;
+    border-radius: 0px 0px 20px 0px;
+}
+#leftsectiond{
+    width: 30%;
+    height: 700px;
+}
+#chatroomName{
+    font-size: 24px;
+    text-align: left;
+    padding: 10px;
+    background-color: #DDA0DD;
+    margin-bottom: 20px;
+    color: white;
+}
+.newMessage{
+    position: relative;
+    bottom: -26px;
+    height: 50px;
+    background-color: #DDA0DD;
+    border-radius: 0px 0px 20px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.textinput{
+    height: 30px;
+    width: 60%;
+    border: none;
+}
+.submitinput{
+    border: none;
+    height: 32px;
+    margin-left: 10px;
+    background-color: #a635a3;
+    color: white;
+    border-radius: 20px;
+}
+#chatmsgbox{
+    overflow-y: auto;
+    background-color: #a635a3;
+    height: 560px;
 }
