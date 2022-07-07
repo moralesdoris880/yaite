@@ -1,0 +1,23 @@
+.chatroomInStoreBox{
+    background-color: #F6CAF6;
+    padding: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.chatroomInStoreBox:hover{
+    background-color: #f3aaf1;
+}
+.chatroomJoinBtn{
+    margin-left: auto;
+    border: none;
+    height: 3vh;
+    border-radius: 10px;
+    border: none;
+    background-color: #cba1cb;
+    box-shadow: 3px 3px 2px #b172b1;
+}
+.chatroomJoinBtn:hover{
+    background-color: #b172b1;
+}

@@ -1,4 +1,4 @@
-import '../css/About.css'
+import '../css/About.css';
 import linkedinlogo from "../media/Linkedin.png";
 import githublogo from "../media/Github.png";
 import gmaillogo from "../media/Gmail.png";

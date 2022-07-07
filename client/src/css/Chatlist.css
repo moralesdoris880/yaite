@@ -19,7 +19,7 @@
     height: 3vh;
     border: none;
     border-radius: 10px;
-    box-shadow: 3px 3px 2px lightblue;
+    box-shadow: 3px 3px 2px #cba1cb;
 }
 #ChatlistTop{
     display: flex;
@@ -33,18 +33,18 @@
     height: 26px;
     position: relative;
     top: 10px;
-    background-color: white;
+    background-color: #fbe5fb;
 }
 #storespan{
     position: relative;
     padding: 0px 0px 0px 0px;
-    color: lightblue;
-    background-color: white;
+    color: #cba1cb;
+    background-color: none;
     font-size: 36px;
     top:-5px;
 }
 #chatroomMsg{
-    background-color: #FFF0F5;
+    background-color: #fef6fe;
     width: 70%;
     height: 700px;
     border-radius: 0px 0px 20px 0px;
@@ -52,12 +52,13 @@
 #leftsectiond{
     width: 30%;
     height: 700px;
+    background-color: #fbe5fb;
 }
 #chatroomName{
     font-size: 24px;
     text-align: left;
     padding: 10px;
-    background-color: #DDA0DD;
+    background-color: #F6CAF6;
     margin-bottom: 20px;
     color: white;
 }
@@ -65,7 +66,7 @@
     position: relative;
     bottom: -26px;
     height: 50px;
-    background-color: #DDA0DD;
+    background-color: #F6CAF6;
     border-radius: 0px 0px 20px 0px;
     display: flex;
     align-items: center;
@@ -86,6 +87,6 @@
 }
 #chatmsgbox{
     overflow-y: auto;
-    background-color: #a635a3;
+    overflow-x: hidden;
     height: 560px;
 }

@@ -4,7 +4,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: aliceblue;
+    background-color: #F6CAF6;
     border-radius: 20px 0px 0px 20px;
 }
 #Nav{
@@ -17,7 +17,7 @@ span{
 }
 .navtab{
     border: none;
-    background-color: aliceblue;
+    background-color: #F6CAF6;
 }
 
 /* justify-content: flex-end; */

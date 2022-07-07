@@ -10,6 +10,7 @@ function Chatlist(){
     const [ chatroomName, setChatroomName ] = useState("");
     const [ messages, setMessages ] = useState([]);
     const [ newMessage, setNewMessage ] = useState("");
+    const [ newMessageSuccess, setNewMessageSuccess ] = useState(false);
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -26,7 +27,7 @@ function Chatlist(){
             r.json().then((messages) => setMessages(messages));
           }
         });
-      }, [chat]);
+      }, [chat,newMessageSuccess]);
 
     function handleNewMessage(e,newMessage){
       e.preventDefault();
@@ -41,11 +42,15 @@ function Chatlist(){
         }),
       }).then((r) => {
         if (r.ok) {
-          r.json().then(() => setNewMessage(""));
+          r.json().then(() => handleNewMessageSuccess());
         } else {
           r.json().then(() => console.log("Message could not be sent"));
         }
       });
+    }
+
+    function handleNewMessageSuccess(){
+      setNewMessageSuccess(!newMessageSuccess);
     }
 
     

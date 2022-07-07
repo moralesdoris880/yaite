@@ -1,8 +1,9 @@
 import { useState } from 'react';
+import '../css/ChatroomInStore.css';
 
 function ChatroomInStore({chatroom}){
-    const[display,setDisplay]= useState(false);
-    const[message,setMessage]= useState("A user has joined the chatroom");
+    const[ display,setDisplay ] = useState(false);
+    const[ message,setMessage ] = useState("A user has joined the chatroom");
 
     function handleJoin(e){
       e.preventDefault();
@@ -25,10 +26,14 @@ function ChatroomInStore({chatroom}){
     }
 
     return(
-        <div>
-            <p>{chatroom.name}</p>
-            <p>Currently 1 User</p>
-            {display?<button disabled>Joined</button> : <button onClick={(e)=>handleJoin(e)}>Join</button>} 
+        <div className='chatroomInStoreBox'>
+            <div>
+              <p>{chatroom.name}</p>
+              <p>Currently 1 User</p> 
+            </div>
+            <div className='chatroomJoinBtn'>
+            {display?<button disabled className='chatroomJoinBtn'>Joined</button> : <button onClick={(e)=>handleJoin(e)} className='chatroomJoinBtn'>Join</button>} 
+            </div>
         </div>
     );
 }

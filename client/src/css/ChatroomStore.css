@@ -1,0 +1,44 @@
+#Store{
+    width: 100%;
+    background-color: #fbe5fb;
+    border-radius: 0px 0px 20px 0px;
+}
+#Create{
+    height: 30px;
+}
+#Search{
+    padding: 10px 10px 10px 10px;
+}
+#CreateNameInput{
+    width: 15vw;
+    height: 3vh;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 3px 3px 2px #cba1cb;
+}
+#CreateChatroomBox{
+    padding: 10px;
+    background-color: #fbe5fb;
+}
+#CreateSubmit{
+    height: 3vh;
+    border-radius: 10px;
+    margin-left: 10px;
+    border: none;
+    background-color: #cba1cb;
+    box-shadow: 3px 3px 2px #b172b1;
+}
+#CreateSubmit:hover{
+    background-color: #b172b1;
+}
+.Createtitle{
+    margin-bottom: 10px;
+    padding-left: 5px;
+}
+#ChatroomList{
+    padding: 10px;
+    height: 545px;
+    border-radius: 0px 0px 20px 0px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
