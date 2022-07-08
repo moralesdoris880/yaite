@@ -2,11 +2,13 @@ import { useState,useEffect } from 'react';
 import ChatroomInStore from '../components/ChatroomInStore';
 import '../css/ChatroomStore.css';
 
+
 function ChatroomStore(){
     const[ query,setQuery ] = useState("");
     const[ name,setName ] = useState("");
     const[ newChatroomSucess,setNewChatroomSucess ] = useState(false);
     const[ chatrooms,setChatrooms ] = useState([]);
+    const[ userChatrooms,setUserChatrooms ] = useState([]);
 
 
     useEffect(() => {
@@ -15,7 +17,20 @@ function ChatroomStore(){
             r.json().then((chatrooms) => setChatrooms(chatrooms));
           }
         });
-      }, [newChatroomSucess]);
+    }, [newChatroomSucess]);
+
+    useEffect(() => {
+        fetch("/user_chatrooms").then((r) => {
+          if (r.ok) {
+            r.json().then((user_chatrooms) => setUserChatrooms(user_chatrooms));
+          }
+        });
+    }, [newChatroomSucess]);
+
+    function handleDiff(chatrooms,userChatrooms){
+       let a = chatrooms.filter((room)=> userChatrooms.includes(room))
+       console.log(a)
+    }
 
 
     function handleNewChatroom(e,name){
@@ -40,8 +55,10 @@ function ChatroomStore(){
     function handleNewChatroomSuccess(chatroom){
         console.log('chatroom was made!')
         setNewChatroomSucess(!newChatroomSucess)
+        console.log(chatrooms,userChatrooms)
     }
 
+    const updatedChatroom = chatrooms.filter(room => !userChatrooms.find( uc => uc.id === room.id))
     return(
         <div id="Store">
             <div className="Header"><h1>Yaite</h1></div>
@@ -58,7 +75,8 @@ function ChatroomStore(){
             </div>
             <div id="ChatroomList">
               <h1 className="Createtitle">Chatrooms</h1>
-            { chatrooms.map((chatroom)=><ChatroomInStore chatroom={chatroom} key={chatroom.id}/>)}
+              {updatedChatroom.map((chatroom=><ChatroomInStore chatroom={chatroom} key={chatroom.id}/>))}
+            {/* { chatrooms.map((chatroom)=> userChatrooms.includes(chatroom)?console.log(chatroom):)} */}
             </div>
         </div>
     );
