@@ -9,7 +9,7 @@ export const userSlice = createSlice({
   initialState,
   reducers: {
     account: (state,action) => {
-      state.value += action.payload
+      state.value = [action.payload]
     },
   },
 })

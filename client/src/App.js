@@ -27,6 +27,7 @@ function App() {
   }, []);
 
   function handleAutoLogin(user){
+    console.log(user)
     dispatch(account(user));
     dispatch(login());
   }

@@ -1,6 +1,6 @@
 import '../css/Home.css';
 import Chatlist from "../components/Chatlist";
-import { useSelector } from 'react-redux'
+import { useSelector } from 'react-redux';
 import Login from './Login';
 
 
