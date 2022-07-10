@@ -7,6 +7,14 @@
     left:50%;
 }
 .user{
-    color: lightgray;
+    color: black;
     padding-bottom: 5px;
 } 
+.messageBubbleOther{
+    background-color: #F6CAF6;
+    width: 300px;
+    border-radius: 10px;
+    padding: 10px;
+    position: relative;
+    left:10px;
+}

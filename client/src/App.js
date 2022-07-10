@@ -15,7 +15,6 @@ import ChatroomStore from "./pages/ChatroomStore";
 function App() {
   const dispatch = useDispatch();
 
-
   useEffect(() => { // auto-login  
     fetch("/me").then((r) => {
       if (r.ok) {
