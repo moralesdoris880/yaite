@@ -6,6 +6,8 @@ import '../css/ChatroomStore.css';
 function ChatroomStore(){
     const[ query,setQuery ] = useState("");
     const[ name,setName ] = useState("");
+    const[ url,setUrl ] = useState("");
+    const[ alt,setAlt ] = useState("");
     const[ newChatroomSucess,setNewChatroomSucess ] = useState(false);
     const[ chatrooms,setChatrooms ] = useState([]);
     const[ userChatrooms,setUserChatrooms ] = useState([]);
@@ -33,7 +35,7 @@ function ChatroomStore(){
     }
 
 
-    function handleNewChatroom(e,name){
+    function handleNewChatroom(e,name,url,alt){
         e.preventDefault();
         fetch("/chatrooms", { 
             method: "POST",
@@ -41,7 +43,11 @@ function ChatroomStore(){
               "Content-Type": "application/json",
             },
             body: JSON.stringify({
-              name 
+              name: name,
+              image_attributes: {
+                url: url, 
+                alt: alt
+              }
             }),
           }).then((r) => {
             if (r.ok) {
@@ -68,8 +74,10 @@ function ChatroomStore(){
             </form>
             <div id="CreateChatroomBox">
             <h1 className="Createtitle">Create a Chatroom</h1>
-            <form id="Create" onSubmit={(e)=>handleNewChatroom(e,name)}>
+            <form id="Create" onSubmit={(e)=>handleNewChatroom(e,name,url,alt)}>
                 <input type="text" placeholder='Chatroom Name' id="CreateNameInput" onChange={(e)=>setName(e.target.value)}/>
+                <input type="text" placeholder='Image Url' id="CreateNameInput" onChange={(e)=>setUrl(e.target.value)}/>
+                <input type="text" placeholder='Image Alt' id="CreateNameInput" onChange={(e)=>setAlt(e.target.value)}/>
                 <input type="submit" value="Create" id="CreateSubmit"/>
             </form>
             </div>

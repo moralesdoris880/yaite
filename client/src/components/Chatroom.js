@@ -1,6 +1,7 @@
 import '../css/Chatroom.css';
 
 function Chatroom({chatroom,setChat,setChatroomName}){
+    console.log(chatroom)
 
     function handleOpenChat(e,chatroom){
         e.preventDefault();

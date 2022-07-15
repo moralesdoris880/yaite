@@ -52,7 +52,6 @@ function Chatlist(){
     function handleNewMessageSuccess(){
       setNewMessageSuccess(!newMessageSuccess);
     }
-
     
     return(
         <div id="Chatlist">

@@ -44,7 +44,7 @@ class ChatroomsController < ApplicationController
     private
 
     def chatroom_params
-        params.permit(:name)
+        params.permit(:name, image_attributes: [:url,:alt])
     end
 
     def render_unprocessable_entity(invalid)

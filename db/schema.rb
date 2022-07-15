@@ -21,6 +21,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_10_231058) do
   end
 
   create_table "images", force: :cascade do |t|
+    t.integer "chatroom_id"
     t.string "url"
     t.string "alt"
     t.datetime "created_at", null: false
