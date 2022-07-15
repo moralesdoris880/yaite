@@ -1,7 +1,10 @@
 import '../css/Chatroom.css';
+import { useState } from 'react';
 
 function Chatroom({chatroom,setChat,setChatroomName}){
-    console.log(chatroom)
+    const[ url,setUrl ] = useState(chatroom.image.url);
+    const[ alt,setAlt ] = useState(chatroom.image.alt);
+    
 
     function handleOpenChat(e,chatroom){
         e.preventDefault();
@@ -11,7 +14,7 @@ function Chatroom({chatroom,setChat,setChatroomName}){
     
     return(
         <div className="chatroom">
-            <button onClick={(e)=>handleOpenChat(e,chatroom)} className="chatroombtn">{chatroom.name}</button>
+            <button onClick={(e)=>handleOpenChat(e,chatroom)} className="chatroombtn"><img src={url} alt={alt} className="logoimg"/><p className="chatroomtitle">{chatroom.name}</p></button>
         </div>
     );
 }
