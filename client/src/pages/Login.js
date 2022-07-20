@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { login } from '../features/reducers/authSlice';
+import { account } from '../features/reducers/userSlice';
 
 function Login(){
     const[username,setUsername]=useState("");
@@ -25,15 +26,16 @@ function Login(){
             }),
           }).then((r) => {
             if (r.ok) {
-              r.json().then((user) => handleLoginSuccess());
+              r.json().then((user) => handleLoginSuccess(user));
             } else {
               r.json().then(() => console.log("Try again bub :<"));
             }
           });
     }
 
-    function handleLoginSuccess(){
+    function handleLoginSuccess(user){
       dispatch(login());
+      dispatch(account(user));
       navigate("/");
     }
 

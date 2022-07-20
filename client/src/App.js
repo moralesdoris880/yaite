@@ -28,7 +28,7 @@ function App() {
   function handleAutoLogin(user){
     dispatch(account(user));
     dispatch(login());
-  }
+  } 
 
   return (
     <BrowserRouter>
