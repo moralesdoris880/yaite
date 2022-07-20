@@ -23,13 +23,13 @@ function Navbar(){
     return(
         <div id="Navbar">
             <span className="material-symbols-outlined" onClick={()=>setBurgerNav(!burgerNav)} style={{ fontSize:'32px'}}>{burgerNav?'menu':'close'}</span>
-            {burgerNav? console.log('random dancing...'):
+            {burgerNav? true :
             <ul id="Nav">
                 <button onClick={()=>navigate("/")} className="navtab"><span className="material-symbols-outlined" style={{ fontSize:'24px'}}>home</span></button>
                 <button onClick={()=>navigate("/about")} className="navtab"><span className="material-symbols-outlined" style={{ fontSize:'24px'}}>info</span></button>
                 <button onClick={()=>navigate("/settings")} className="navtab"><span className="material-symbols-outlined" style={{ fontSize:'24px'}}>settings</span></button>
             </ul>}
-            {auth?<button onClick={(e)=>handleLogout(e)} className="navtab"><span className="material-symbols-outlined" style={{ fontSize:'24px'}}>exit_to_app</span></button>:console.log('not logged in')}
+            {auth?<button onClick={(e)=>handleLogout(e)} className="navtab"><span className="material-symbols-outlined" style={{ fontSize:'24px'}}>exit_to_app</span></button>:false}
         </div>
     );
 }

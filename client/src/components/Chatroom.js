@@ -3,8 +3,7 @@ import { useState } from 'react';
 
 function Chatroom({chatroom,setChat,setChatroomName}){
     const[ url,setUrl ] = useState(chatroom.image.url);
-    const[ alt,setAlt ] = useState(chatroom.image.alt);
-    
+    const[ alt,setAlt ] = useState(chatroom.image.alt);   
 
     function handleOpenChat(e,chatroom){
         e.preventDefault();
