@@ -8,7 +8,7 @@ import { account } from '../features/reducers/userSlice';
 function Login(){
     const[username,setUsername]=useState("");
     const[password,setPassword]=useState("");
-    const[displayPassword,setDisplayPassword]=useState(true);
+    const [displayPassword,setDisplayPassword]=useState(false);
     const navigate = useNavigate();
     const dispatch = useDispatch();
     
@@ -50,10 +50,10 @@ function Login(){
             <form id="loginform" onSubmit={handleLogin}>
                 <h1 className='heading'>Log In</h1>
                 <p className='text' style={{textAlign:'center'}}>Don't have an account? <a href='/signup'>Sign up</a> for free.</p>
-                <input type="text" placeholder="Username" className='inputs' onChange={(e) => setUsername(e.target.value)}></input>
-                <input type={displayPassword? "text":"password"} placeholder="Password" className='inputs' onChange={(e) => setPassword(e.target.value)}></input>
-                <input type="checkbox" onClick={(e) => handleDisplayPassword(e)}/>Show Password
-                <input type="submit" value="Log In" className='submit'></input>
+                <input type="text" placeholder="Username" className='inputs' onChange={(e) => setUsername(e.target.value)}/>
+                <input type={displayPassword?"password":"text"} placeholder="Password" className='inputs' onChange={(e) => setPassword(e.target.value)}/>
+                <p onClick={(e)=> handleDisplayPassword(e)}> {displayPassword?"Show Password":"Hide Password"} </p>
+                <input type="submit" value="Log In" className='submit'/>
             </form>
         </div>
     );
