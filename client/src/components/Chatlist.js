@@ -69,10 +69,11 @@ function Chatlist(){
               <h1 id="chatroomName">{chatroomName}</h1>  
               <div id="chatmsgbox">{messages.map((message)=><Message message={message} key={message.id}/>)}
               </div>
+              {chat?
               <form className="newMessage" onSubmit={(e)=>handleNewMessage(e,newMessage)}>
                 <input type="text" placeholder='Start a new message' className='textinput' onChange={(e)=>setNewMessage(e.target.value)} required/>
                 <input type="submit" value="send"className='submitinput'/>
-              </form>
+              </form>: null}
             </div>
         </div>
     );
