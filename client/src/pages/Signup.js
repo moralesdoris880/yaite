@@ -54,7 +54,7 @@ function Signup(){
                 <input type="text" placeholder="Username" className='inputs' onChange={(e) => setUsername(e.target.value)} required></input>
                 <input type={displayPassword? "text":"password"} placeholder="Password" className='inputs' onChange={(e) => setPassword(e.target.value)} required></input>
                 <input type={displayPassword? "text":"password"} placeholder="Re-Enter Password" className='inputs' onChange={(e) => setPasswordConfirmation(e.target.value)} required></input>
-                <input type="checkbox" onClick={(e) => handleDisplayPassword(e)}/>Show Password
+                <p onClick={(e)=> handleDisplayPassword(e)}> {displayPassword?"Hide Password":"Show Password"} </p>
                 <input type="submit" value="Sign Up" className='submit'></input>
             </form>
         </div>

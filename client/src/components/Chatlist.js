@@ -51,6 +51,7 @@ function Chatlist(){
 
     function handleNewMessageSuccess(){
       setNewMessageSuccess(!newMessageSuccess);
+      setNewMessage('');
     }
     
     return(
@@ -71,7 +72,7 @@ function Chatlist(){
               </div>
               {chat?
               <form className="newMessage" onSubmit={(e)=>handleNewMessage(e,newMessage)}>
-                <input type="text" placeholder='Start a new message' className='textinput' onChange={(e)=>setNewMessage(e.target.value)} required/>
+                <input type="text" placeholder='Start a new message' className='textinput' value={newMessage} onChange={(e)=>setNewMessage(e.target.value)} required/>
                 <input type="submit" value="send"className='submitinput'/>
               </form>: null}
             </div>
